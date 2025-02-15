@@ -247,22 +247,17 @@
 		}
 
 		.skill {
-			margin-bottom: 20px;
-			text-align: left;
-			max-width: 700px;
-			margin-left: auto;
-			margin-right: auto;
-			position: relative;
 			display: flex;
-			justify-content: space-between;
+			justify-content: space-between; /* Выравниваем название слева, процент справа */
 			align-items: center;
+			max-width: 700px;
+			margin: 0 auto 5px; /* Уменьшаем отступ снизу */
 		}
 
 		.skill-name {
 			font-size: 1.2em;
 			font-weight: 600;
 			color: #333;
-			margin-bottom: 5px;
 		}
 
 		.skill-percent {
@@ -270,9 +265,9 @@
 			font-weight: 600;
 			color: #ff6f61; /* Акцентный цвет */
 			text-align: right;
-			min-width: 50px;
 		}
 
+		/* Блок шкалы остается без изменений */
 		.skill-bar {
 			height: 14px;
 			background: #ddd;
@@ -288,7 +283,6 @@
 			width: 0;
 			transition: width 1.5s ease-in-out;
 		}
-
 
         /* Testimonials Section */
         .testimonials blockquote {
@@ -456,6 +450,7 @@
 		<!-- Skills Section -->
 		<section class="skills">
 			<h2>Skills</h2>
+
 			<div class="skill">
 				<div class="skill-name">Audio Production</div>
 				<div class="skill-percent">100%</div>
@@ -464,7 +459,7 @@
 
 			<div class="skill">
 				<div class="skill-name">Sound Design</div>
-				<div class="skill-percent">95%</div>
+				<div class="skill-percent">100%</div>
 			</div>
 			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 
@@ -482,17 +477,17 @@
 
 			<div class="skill">
 				<div class="skill-name">Reaper</div>
-				<div class="skill-percent">95%</div>
+				<div class="skill-percent">100%</div>
 			</div>
 			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 
 			<div class="skill">
 				<div class="skill-name">iZotope</div>
-				<div class="skill-percent">80%</div>
+				<div class="skill-percent">85%</div>
 			</div>
 			<div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
-		</section>
 
+		</section>
 
 
         <!-- Testimonials Section -->
