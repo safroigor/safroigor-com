@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igor Safronov - Sound Designer</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #ff6f61;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff3b2f;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ffffff, #f1f1f1);
+            padding: 60px 20px;
+            text-align: center;
+            color: #333;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 4px solid #ff6f61;
+            transition: transform 0.3s ease;
+        }
+
+        header img:hover {
+            transform: scale(1.1);
+        }
+
+        header h1 {
+            margin: 20px 0 10px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.2em;
+            color: #666;
+        }
+		
+		.name-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.name-container h1 {
+			margin: 10px 0 0;
+			font-size: 2.5em;
+			font-weight: 700;
+		}
+
+		.social-tag {
+			color: #ff6f61;
+			font-size: 1.2em;
+			font-weight: 600;
+			margin-top: -10px;
+			margin-bottom: 20px;
+		}
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ff6f61;
+            text-align: center;
+        }
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto;
+			margin-bottom: 50px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .intro a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #ff6f61;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .intro a:hover {
+            background-color: #ff3b2f;
+        }
+
+        /* Experience Section */
+        .experience {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .experience-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .experience-item h3 {
+            margin: 0 0 5px;
+            font-size: 1.5em;
+            color: #ff6f61;
+        }
+
+        .experience-item .meta {
+            margin-bottom: 10px;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .experience-item .description {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 16 / 9; /* Сохраняем пропорции 16:9 */
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%; /* Растягиваем изображение на всю высоту */
+            object-fit: cover; /* Обрезаем изображение, чтобы оно заполнило блок */
+            display: block;
+        }
+
+        .gallery-item .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 111, 97, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal iframe {
+            width: 80%;
+            height: 80%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Testimonials Section */
+        .testimonials blockquote {
+            background: #fff;
+            padding: 20px;
+            border-left: 5px solid #ff6f61;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-style: italic;
+            color: #666;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonials cite {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            color: #666;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .intro p {
+                font-size: 1em;
+            }
+
+            .experience {
+                grid-template-columns: 1fr;
+            }
+
+            .modal iframe {
+                width: 90%;
+                height: 50%;
+            }
+			
+			.social-tag {
+				font-size: 1em; /* Немного меньше на мобильных */
+				margin: 3px 0; /* Уменьшаем отступы */
+			}
+        }
+		
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./img/avatar.jpg" alt="Igor Safronov">
+        <div class="name-container">
+            <h1>Igor Safronov</h1>
+            <div class="social-tag">@safroigor</div>
+        </div>
+        <p>Sound Designer / Audio Mixer / Dialog Editor</p>
+    </header>
+    <div class="container">
+        <!-- Intro Section -->
+        <section class="intro">
+            <p>With over 10 years in audio post-production for TV, film, advertising, and video games, I specialize in sound design, mixing, dialog editing, and ADR. Proficient in Reaper & Pro Tools, with expertise in voice-over recording, sound restoration, and adapting to new software. Experienced in both studio and on-set audio, including equipment setup, signal routing, and troubleshooting. Strong background in working with actors to ensure high-quality dialogue capture and synchronization. Knowledgeable in broadcast audio standards, delivering technically precise and emotionally compelling soundscapes.</p>
+            <a href="./Igor Safronov - sound designer - CV.pdf" download="Igor Safronov - sound designer - CV.pdf">Download Resume</a>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience-section">
+            <h2>Experience</h2>
+            <div class="experience">
+                <div class="experience-item">
+                    <h3>Sound Design Team Lead</h3>
+                    <div class="meta">
+                        <p>Wargaming · 2022 - Present</p>
+                    </div>
+                    <p class="description">Leading sound design teams and managing audio for game trailers, commercials, and videos. Specializing in sound design, mixing, and mastering, while directing voice-over sessions and integrating dialogue. Ensures high-quality standards, working across studio and on-location settings. Collaborates with developers and producers to seamlessly integrate audio into visuals, while mentoring junior specialists and overseeing project timelines.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Sound Designer</h3>
+                    <div class="meta">
+                        <p>TheSoul Publishing · 2019 - 2022</p>
+                    </div>
+                    <p class="description">Created and mixed audio for a variety of video projects, ensuring clear, high-quality sound. Produced 10–15 minutes of audio daily, consistently meeting tight deadlines while maintaining professional standards. Focused on optimizing workflows to improve efficiency, allowing for smoother production processes and timely delivery. Paid close attention to project requirements, ensuring that all audio elements were seamlessly integrated and aligned with the overall creative vision.</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Freelance Sound Specialist</h3>
+                    <div class="meta">
+                        <p>Self-Employed · 2013 - Present</p>
+                    </div>
+                    <p class="description">Created and refined sound design, audio mixing, and dialog editing for films, trailers, TV shows, commercials, and video games, ensuring high-quality audio. Enhanced voice clarity and reduced background noise through careful editing and restoration. Worked with Reaper and Avid Pro Tools, managing post-production workflows and collaborating with teams and vendors to meet deadlines efficiently.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <h2>My Work</h2>
+            <div class="gallery">
+                <div class="gallery-item" data-video="https://www.youtube.com/watch?v=fgPNJfxNLOY">
+                    <img src="./img/vid-tumb/steel-hunters.png" alt="Video 1">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="gallery-item" data-video="https://www.youtube.com/watch?v=urpvANXrFFE">
+                    <img src="./img/vid-tumb/web-adventure.jpg" alt="Video 2">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="gallery-item" data-video="https://www.youtube.com/watch?v=BdsWpFHqs6k">
+                    <img src="./img/vid-tumb/goodfall.png" alt="Video 3">
+                    <div class="play-icon">▶</div>
+                </div>
+				<div class="gallery-item" data-video="https://www.youtube.com/watch?v=7AZeTN4eCNM">
+                    <img src="./img/vid-tumb/jeremiah.png" alt="Video 4">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="gallery-item" data-video="https://www.youtube.com/watch?v=aFwxIPW7bSw">
+                    <img src="./img/vid-tumb/champz.png" alt="Video 5">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="gallery-item" data-video="https://www.youtube.com/watch?v=DyIS50J9QpI">
+                    <img src="./img/vid-tumb/fear.png" alt="Video 6">
+                    <div class="play-icon">▶</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>Client Testimonials</h2>
+            <blockquote>
+                <p>"I love to work with people who are not just doing their job. Igor loves his craft and I appreciate his attention to details and willingness to provide the best result. Sound quality is great. Our cartoon got a life! Very very good! Tremendous and awesome job! Thank you Igor! We decided to pick Igor as our sound designer for our cartoon series. 10/10"</p>
+                <cite>— Terrence Johnson, Producer</cite>
+            </blockquote>
+            <blockquote>
+                <p>"We are absolutely delighted with Igor's work! He not only met but exceeded our expectations in sound design. Igor's attention to detail and willingness to go the extra mile made our project exceptional. The collaboration was seamless, and his creative input added a unique touch. Igor is the go-to sound designer for anyone looking to elevate their project. Super pleased with the outcome!"</p>
+                <cite>— Catherine Day, Animation Show Director</cite>
+            </blockquote>
+			<blockquote>
+                <p>"Second time working with him and it was a great experience again! Fast, professional, talented. Couldn't ask for a better sound designer. I've tried working with several people and he is by far the best! Definitely must work with if you are trying to get something sound designed.</p>
+                <cite>— Jack Hicks, Video Editor</cite>
+            </blockquote>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:igor@safroigor.com">igor@safroigor.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2023 Igor Safronov. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="videoModal">
+        <span class="close" id="closeModal">&times;</span>
+        <iframe id="modalVideo" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        // JavaScript for Modal
+        const modal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        const closeModal = document.getElementById('closeModal');
+
+        // Open modal on gallery item click
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const videoUrl = item.getAttribute('data-video');
+                modalVideo.src = videoUrl;
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Close modal on close button click
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modalVideo.src = ''; // Stop the video
+        });
+
+        // Close modal on clicking outside the video
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                modalVideo.src = ''; // Stop the video
+            }
+        });
+		
+		document.querySelectorAll('.gallery-item').forEach(item => {
+			item.addEventListener('click', () => {
+				let videoUrl = item.getAttribute('data-video');
+
+				// Преобразование ссылки в правильный формат для встраивания
+				if (videoUrl.includes("watch?v=")) {
+					videoUrl = videoUrl.replace("watch?v=", "embed/");
+				} else if (videoUrl.includes("youtu.be/")) {
+					let videoId = videoUrl.split("youtu.be/")[1].split("?")[0]; 
+					videoUrl = "https://www.youtube.com/embed/" + videoId;
+				}
+
+				modalVideo.src = videoUrl;
+				modal.style.display = 'flex';
+			});
+		});
+    </script>
+</body>
+</html>
