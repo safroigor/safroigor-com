@@ -241,7 +241,7 @@
 		.skills {
 			margin-bottom: 60px;
 			text-align: center;
-			max-width: 800px; /* Увеличена ширина секции */
+			max-width: 800px;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -249,10 +249,13 @@
 		.skill {
 			margin-bottom: 20px;
 			text-align: left;
-			max-width: 700px; /* Увеличена ширина блока скилов */
+			max-width: 700px;
 			margin-left: auto;
 			margin-right: auto;
 			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 		}
 
 		.skill-name {
@@ -262,12 +265,21 @@
 			margin-bottom: 5px;
 		}
 
+		.skill-percent {
+			font-size: 1.2em;
+			font-weight: 600;
+			color: #ff6f61; /* Акцентный цвет */
+			text-align: right;
+			min-width: 50px;
+		}
+
 		.skill-bar {
-			height: 14px; /* Немного увеличили высоту шкалы */
+			height: 14px;
 			background: #ddd;
 			border-radius: 7px;
 			overflow: hidden;
 			position: relative;
+			width: 100%;
 		}
 
 		.skill-fill {
@@ -275,23 +287,7 @@
 			background: #ff6f61;
 			width: 0;
 			transition: width 1.5s ease-in-out;
-			position: relative;
 		}
-
-		/* Процентный текст */
-		.skill-percent {
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			transform: translateY(-50%);
-			font-size: 1em;
-			font-weight: 600;
-			color: #fff; /* Белый цвет, чтобы выделялся */
-			background: rgba(0, 0, 0, 0.6); /* Затемненный фон для контраста */
-			padding: 2px 6px;
-			border-radius: 5px;
-		}
-
 
 
         /* Testimonials Section */
@@ -462,47 +458,41 @@
 			<h2>Skills</h2>
 			<div class="skill">
 				<div class="skill-name">Audio Production</div>
-				<div class="skill-bar">
-					<div class="skill-fill" data-percent="100"></div>
-					<span class="skill-percent">100%</span>
-				</div>
+				<div class="skill-percent">100%</div>
 			</div>
+			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+
 			<div class="skill">
 				<div class="skill-name">Sound Design</div>
-				<div class="skill-bar">
-					<div class="skill-fill" data-percent="100"></div>
-					<span class="skill-percent">100%</span>
-				</div>
+				<div class="skill-percent">95%</div>
 			</div>
+			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+
 			<div class="skill">
 				<div class="skill-name">Audio Editing</div>
-				<div class="skill-bar">
-					<div class="skill-fill" data-percent="100"></div>
-					<span class="skill-percent">100%</span>
-				</div>
+				<div class="skill-percent">95%</div>
 			</div>
+			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+
 			<div class="skill">
 				<div class="skill-name">Field Recording</div>
-				<div class="skill-bar">
-					<div class="skill-fill" data-percent="100"></div>
-					<span class="skill-percent">100%</span>
-				</div>
+				<div class="skill-percent">95%</div>
 			</div>
+			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+
 			<div class="skill">
 				<div class="skill-name">Reaper</div>
-				<div class="skill-bar">
-					<div class="skill-fill" data-percent="100"></div>
-					<span class="skill-percent">100%</span>
-				</div>
+				<div class="skill-percent">95%</div>
 			</div>
+			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+
 			<div class="skill">
 				<div class="skill-name">iZotope</div>
-				<div class="skill-bar">
-					<div class="skill-fill" data-percent="90"></div>
-					<span class="skill-percent">90%</span>
-				</div>
+				<div class="skill-percent">80%</div>
 			</div>
+			<div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
 		</section>
+
 
 
         <!-- Testimonials Section -->
@@ -588,24 +578,24 @@
 		// skills animation
 		document.addEventListener("DOMContentLoaded", function () {
 			const skillBars = document.querySelectorAll(".skill-fill");
+			const skillPercents = document.querySelectorAll(".skill-percent");
 			const skillSection = document.querySelector(".skills");
 			let animationTriggered = false;
 
 			function animateSkills() {
 				if (!animationTriggered) {
-					skillBars.forEach(bar => {
+					skillBars.forEach((bar, index) => {
 						const percent = bar.getAttribute("data-percent");
 						bar.style.width = percent + "%";
 
 						// Обновляем текст с процентом
-						const percentText = bar.parentElement.querySelector(".skill-percent");
 						let currentPercent = 0;
 						const interval = setInterval(() => {
 							if (currentPercent >= percent) {
 								clearInterval(interval);
 							} else {
 								currentPercent++;
-								percentText.textContent = currentPercent + "%";
+								skillPercents[index].textContent = currentPercent + "%";
 							}
 						}, 10);
 					});
