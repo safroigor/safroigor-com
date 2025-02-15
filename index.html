@@ -246,35 +246,43 @@
 			margin-right: auto;
 		}
 
+		.skill-container {
+			max-width: 700px;
+			margin: 0 auto 20px; /* Вернули нормальные интервалы между скиллами */
+		}
+
+		/* Название скила и процент теперь строго по краям */
 		.skill {
 			display: flex;
-			justify-content: space-between; /* Выравниваем название слева, процент справа */
+			justify-content: space-between; /* Название слева, процент справа */
 			align-items: center;
-			max-width: 700px;
-			margin: 0 auto 5px; /* Уменьшаем отступ снизу */
+			margin-bottom: 5px;
 		}
 
 		.skill-name {
 			font-size: 1.2em;
 			font-weight: 600;
 			color: #333;
+			text-align: left; /* Выравниваем по левому краю */
+			width: 100%;
 		}
 
 		.skill-percent {
 			font-size: 1.2em;
 			font-weight: 600;
-			color: #ff6f61; /* Акцентный цвет */
-			text-align: right;
+			color: #ff6f61;
+			text-align: right; /* Выравниваем по правому краю */
+			min-width: 50px;
 		}
 
-		/* Блок шкалы остается без изменений */
+		/* Полоса загрузки */
 		.skill-bar {
 			height: 14px;
 			background: #ddd;
 			border-radius: 7px;
 			overflow: hidden;
-			position: relative;
 			width: 100%;
+			position: relative;
 		}
 
 		.skill-fill {
@@ -451,41 +459,53 @@
 		<section class="skills">
 			<h2>Skills</h2>
 
-			<div class="skill">
-				<div class="skill-name">Audio Production</div>
-				<div class="skill-percent">100%</div>
+			<div class="skill-container">
+				<div class="skill">
+					<div class="skill-name">Audio Production</div>
+					<div class="skill-percent">0%</div>
+				</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 			</div>
-			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 
-			<div class="skill">
-				<div class="skill-name">Sound Design</div>
-				<div class="skill-percent">100%</div>
+			<div class="skill-container">
+				<div class="skill">
+					<div class="skill-name">Sound Design</div>
+					<div class="skill-percent">0%</div>
+				</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 			</div>
-			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 
-			<div class="skill">
-				<div class="skill-name">Audio Editing</div>
-				<div class="skill-percent">95%</div>
+			<div class="skill-container">
+				<div class="skill">
+					<div class="skill-name">Audio Editing</div>
+					<div class="skill-percent">0%</div>
+				</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 			</div>
-			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 
-			<div class="skill">
-				<div class="skill-name">Field Recording</div>
-				<div class="skill-percent">95%</div>
+			<div class="skill-container">
+				<div class="skill">
+					<div class="skill-name">Field Recording</div>
+					<div class="skill-percent">0%</div>
+				</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 			</div>
-			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 
-			<div class="skill">
-				<div class="skill-name">Reaper</div>
-				<div class="skill-percent">100%</div>
+			<div class="skill-container">
+				<div class="skill">
+					<div class="skill-name">Reaper</div>
+					<div class="skill-percent">0%</div>
+				</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 			</div>
-			<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
 
-			<div class="skill">
-				<div class="skill-name">iZotope</div>
-				<div class="skill-percent">85%</div>
+			<div class="skill-container">
+				<div class="skill">
+					<div class="skill-name">iZotope</div>
+					<div class="skill-percent">0%</div>
+				</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
 			</div>
-			<div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
 
 		</section>
 
