@@ -241,48 +241,57 @@
 		.skills {
 			margin-bottom: 60px;
 			text-align: center;
+			max-width: 800px; /* Увеличена ширина секции */
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		.skill {
-			margin-bottom: 15px;
+			margin-bottom: 20px;
 			text-align: left;
-			max-width: 600px;
+			max-width: 700px; /* Увеличена ширина блока скилов */
 			margin-left: auto;
 			margin-right: auto;
 			position: relative;
 		}
 
 		.skill-name {
-			font-size: 1.1em;
+			font-size: 1.2em;
 			font-weight: 600;
-			color: #333; /* Основной цвет текста */
+			color: #333;
 			margin-bottom: 5px;
 		}
 
 		.skill-bar {
-			height: 10px;
+			height: 14px; /* Немного увеличили высоту шкалы */
 			background: #ddd;
-			border-radius: 5px;
+			border-radius: 7px;
 			overflow: hidden;
 			position: relative;
 		}
 
 		.skill-fill {
 			height: 100%;
-			background: #ff6f61; /* Основной акцентный цвет */
+			background: #ff6f61;
 			width: 0;
 			transition: width 1.5s ease-in-out;
+			position: relative;
 		}
 
 		/* Процентный текст */
 		.skill-percent {
 			position: absolute;
-			right: 0;
-			top: -25px;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
 			font-size: 1em;
 			font-weight: 600;
-			color: #333; /* Основной цвет текста */
+			color: #fff; /* Белый цвет, чтобы выделялся */
+			background: rgba(0, 0, 0, 0.6); /* Затемненный фон для контраста */
+			padding: 2px 6px;
+			border-radius: 5px;
 		}
+
 
 
         /* Testimonials Section */
@@ -580,7 +589,7 @@
 		document.addEventListener("DOMContentLoaded", function () {
 			const skillBars = document.querySelectorAll(".skill-fill");
 			const skillSection = document.querySelector(".skills");
-			let animationTriggered = false; // Флаг для предотвращения повторного срабатывания анимации
+			let animationTriggered = false;
 
 			function animateSkills() {
 				if (!animationTriggered) {
@@ -598,13 +607,12 @@
 								currentPercent++;
 								percentText.textContent = currentPercent + "%";
 							}
-						}, 15);
+						}, 10);
 					});
 					animationTriggered = true;
 				}
 			}
 
-			// Запускаем анимацию при скролле
 			function checkScroll() {
 				const sectionPosition = skillSection.getBoundingClientRect().top;
 				const screenHeight = window.innerHeight;
@@ -616,6 +624,7 @@
 
 			window.addEventListener("scroll", checkScroll);
 		});
+
     </script>
 </body>
 </html>
