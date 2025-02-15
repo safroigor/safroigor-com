@@ -249,12 +249,13 @@
 			max-width: 600px;
 			margin-left: auto;
 			margin-right: auto;
+			position: relative;
 		}
 
 		.skill-name {
 			font-size: 1.1em;
 			font-weight: 600;
-			color: #333;
+			color: #333; /* Основной цвет текста */
 			margin-bottom: 5px;
 		}
 
@@ -268,10 +269,21 @@
 
 		.skill-fill {
 			height: 100%;
-			background: #ff6f61;
+			background: #ff6f61; /* Основной акцентный цвет */
 			width: 0;
 			transition: width 1.5s ease-in-out;
 		}
+
+		/* Процентный текст */
+		.skill-percent {
+			position: absolute;
+			right: 0;
+			top: -25px;
+			font-size: 1em;
+			font-weight: 600;
+			color: #333; /* Основной цвет текста */
+		}
+
 
         /* Testimonials Section */
         .testimonials blockquote {
@@ -441,29 +453,48 @@
 			<h2>Skills</h2>
 			<div class="skill">
 				<div class="skill-name">Audio Production</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+				<div class="skill-bar">
+					<div class="skill-fill" data-percent="100"></div>
+					<span class="skill-percent">0%</span>
+				</div>
 			</div>
 			<div class="skill">
 				<div class="skill-name">Sound Design</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+				<div class="skill-bar">
+					<div class="skill-fill" data-percent="100"></div>
+					<span class="skill-percent">0%</span>
+				</div>
 			</div>
 			<div class="skill">
 				<div class="skill-name">Audio Editing</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+				<div class="skill-bar">
+					<div class="skill-fill" data-percent="100"></div>
+					<span class="skill-percent">0%</span>
+				</div>
 			</div>
 			<div class="skill">
 				<div class="skill-name">Field Recording</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+				<div class="skill-bar">
+					<div class="skill-fill" data-percent="100"></div>
+					<span class="skill-percent">0%</span>
+				</div>
 			</div>
 			<div class="skill">
 				<div class="skill-name">Reaper</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+				<div class="skill-bar">
+					<div class="skill-fill" data-percent="100"></div>
+					<span class="skill-percent">0%</span>
+				</div>
 			</div>
 			<div class="skill">
 				<div class="skill-name">iZotope</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
+				<div class="skill-bar">
+					<div class="skill-fill" data-percent="90"></div>
+					<span class="skill-percent">0%</span>
+				</div>
 			</div>
 		</section>
+
 
         <!-- Testimonials Section -->
         <section class="testimonials">
@@ -545,13 +576,45 @@
 			});
 		});
 		
-		// scills animation
+		// skills animation
 		document.addEventListener("DOMContentLoaded", function () {
 			const skillBars = document.querySelectorAll(".skill-fill");
-			skillBars.forEach(bar => {
-				const percent = bar.getAttribute("data-percent");
-				bar.style.width = percent + "%";
-			});
+			const skillSection = document.querySelector(".skills");
+			let animationTriggered = false; // Флаг для предотвращения повторного срабатывания анимации
+
+			function animateSkills() {
+				if (!animationTriggered) {
+					skillBars.forEach(bar => {
+						const percent = bar.getAttribute("data-percent");
+						bar.style.width = percent + "%";
+
+						// Обновляем текст с процентом
+						const percentText = bar.parentElement.querySelector(".skill-percent");
+						let currentPercent = 0;
+						const interval = setInterval(() => {
+							if (currentPercent >= percent) {
+								clearInterval(interval);
+							} else {
+								currentPercent++;
+								percentText.textContent = currentPercent + "%";
+							}
+						}, 15);
+					});
+					animationTriggered = true;
+				}
+			}
+
+			// Запускаем анимацию при скролле
+			function checkScroll() {
+				const sectionPosition = skillSection.getBoundingClientRect().top;
+				const screenHeight = window.innerHeight;
+				if (sectionPosition < screenHeight * 0.75) {
+					animateSkills();
+					window.removeEventListener("scroll", checkScroll);
+				}
+			}
+
+			window.addEventListener("scroll", checkScroll);
 		});
     </script>
 </body>
