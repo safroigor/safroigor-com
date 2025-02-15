@@ -236,6 +236,42 @@
             font-size: 30px;
             cursor: pointer;
         }
+		
+		/* Skills Section */
+		.skills {
+			margin-bottom: 60px;
+			text-align: center;
+		}
+
+		.skill {
+			margin-bottom: 15px;
+			text-align: left;
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.skill-name {
+			font-size: 1.1em;
+			font-weight: 600;
+			color: #333;
+			margin-bottom: 5px;
+		}
+
+		.skill-bar {
+			height: 10px;
+			background: #ddd;
+			border-radius: 5px;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.skill-fill {
+			height: 100%;
+			background: #ff6f61;
+			width: 0;
+			transition: width 1.5s ease-in-out;
+		}
 
         /* Testimonials Section */
         .testimonials blockquote {
@@ -399,6 +435,35 @@
                 </div>
             </div>
         </section>
+		
+		<!-- Skills Section -->
+		<section class="skills">
+			<h2>Skills</h2>
+			<div class="skill">
+				<div class="skill-name">Audio Production</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+			</div>
+			<div class="skill">
+				<div class="skill-name">Sound Design</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+			</div>
+			<div class="skill">
+				<div class="skill-name">Audio Editing</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+			</div>
+			<div class="skill">
+				<div class="skill-name">Field Recording</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+			</div>
+			<div class="skill">
+				<div class="skill-name">Reaper</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+			</div>
+			<div class="skill">
+				<div class="skill-name">iZotope</div>
+				<div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
+			</div>
+		</section>
 
         <!-- Testimonials Section -->
         <section class="testimonials">
@@ -477,6 +542,15 @@
 
 				modalVideo.src = videoUrl;
 				modal.style.display = 'flex';
+			});
+		});
+		
+		// scills animation
+		document.addEventListener("DOMContentLoaded", function () {
+			const skillBars = document.querySelectorAll(".skill-fill");
+			skillBars.forEach(bar => {
+				const percent = bar.getAttribute("data-percent");
+				bar.style.width = percent + "%";
 			});
 		});
     </script>
