@@ -496,7 +496,7 @@
             }
         }
     </style>
-	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <header>
@@ -756,9 +756,15 @@
         });
 
         // EmailJS Integration
-        (function(){
-            emailjs.init("gIKsIQARsnHKKd4Wk"); // Замените на ваш Public Key
-        })();
+        document.addEventListener("DOMContentLoaded", function() {
+			if (typeof emailjs !== "undefined") {
+				emailjs.init("gIKsIQARsnHKKd4Wk"); // Убедись, что ключ актуален!
+				console.log("✅ EmailJS загружен успешно.");
+			} else {
+				console.error("❌ Ошибка: EmailJS не загрузился.");
+			}
+		});
+
 
         document.getElementById("contactForm").addEventListener("submit", function(event) {
 			event.preventDefault(); // Остановка стандартной отправки формы
