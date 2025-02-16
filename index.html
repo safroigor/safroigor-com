@@ -3,26 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Igor Safronov - Sound Designer</title>
+    <title>Igor Safronov - Sound Designer | Audio Mixer | Dialog Editor</title>
+    <meta name="description" content="Igor Safronov - Professional Sound Designer with over 10 years of experience in audio post-production for TV, film, advertising, and video games. Specializing in sound design, mixing, and dialog editing.">
+    <meta property="og:title" content="Igor Safronov - Sound Designer">
+    <meta property="og:description" content="Professional Sound Designer with over 10 years of experience in audio post-production for TV, film, advertising, and video games.">
+    <meta property="og:image" content="https://safroigor.com/img/avatar.jpg">
+    <meta property="og:url" content="https://safroigor.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://safroigor.com/index.html">
     <style>
         /* General Styles */
+        :root {
+            --primary-color: #ff6f61;
+            --secondary-color: #ff3b2f;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --light-text-color: #666;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
             line-height: 1.6;
         }
 
         a {
-            color: #ff6f61;
+            color: var(--primary-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #ff3b2f;
+            color: var(--secondary-color);
         }
 
         /* Header */
@@ -30,7 +45,7 @@
             background: linear-gradient(135deg, #ffffff, #f1f1f1);
             padding: 60px 20px;
             text-align: center;
-            color: #333;
+            color: var(--text-color);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -38,7 +53,7 @@
             border-radius: 50%;
             width: 150px;
             height: 150px;
-            border: 4px solid #ff6f61;
+            border: 4px solid var(--primary-color);
             transition: transform 0.3s ease;
         }
 
@@ -55,50 +70,50 @@
         header p {
             margin: 0;
             font-size: 1.2em;
-            color: #666;
+            color: var(--light-text-color);
         }
-		
-		.name-container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
 
-		.name-container h1 {
-			margin: 10px 0 0;
-			font-size: 2.5em;
-			font-weight: 700;
-		}
+        .name-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-		.social-tag {
-			color: #ff6f61;
-			font-size: 1.2em;
-			font-weight: 600;
-			margin-top: -10px;
-			margin-bottom: 20px;
-		}
-		
-		/* Head contact */
-		.contact-info {
-			margin-top: 30px;
-			font-size: 1em;
-			color: #666;
-			display: flex;
-			justify-content: center;
-			gap: 15px;
-			flex-wrap: wrap;
-		}
+        .name-container h1 {
+            margin: 10px 0 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
 
-		.contact-info a {
-			color: #ff6f61;
-			text-decoration: none;
-			font-weight: 600;
-		}
+        .social-tag {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
 
-		.contact-info a:hover {
-			color: #ff3b2f;
-		}
-		
+        /* Head contact */
+        .contact-info {
+            margin-top: 30px;
+            font-size: 1em;
+            color: var(--light-text-color);
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-color);
+        }
+
         /* Container */
         .container {
             max-width: 1200px;
@@ -114,7 +129,7 @@
         h2 {
             font-size: 2em;
             margin-bottom: 20px;
-            color: #ff6f61;
+            color: var(--primary-color);
             text-align: center;
         }
 
@@ -123,19 +138,19 @@
             text-align: center;
             max-width: 1100px;
             margin: 0 auto;
-			margin-bottom: 50px;
+            margin-bottom: 50px;
         }
 
         .intro p {
             font-size: 1.1em;
-            color: #666;
+            color: var(--light-text-color);
         }
 
         .intro a {
             display: inline-block;
             margin-top: 20px;
             padding: 12px 24px;
-            background-color: #ff6f61;
+            background-color: var(--primary-color);
             color: #fff;
             border-radius: 5px;
             font-weight: 600;
@@ -143,7 +158,7 @@
         }
 
         .intro a:hover {
-            background-color: #ff3b2f;
+            background-color: var(--secondary-color);
         }
 
         /* Experience Section */
@@ -169,7 +184,7 @@
         .experience-item h3 {
             margin: 0 0 5px;
             font-size: 1.5em;
-            color: #ff6f61;
+            color: var(--primary-color);
         }
 
         .experience-item .meta {
@@ -179,7 +194,7 @@
         }
 
         .experience-item .description {
-            color: #666;
+            color: var(--light-text-color);
             line-height: 1.5;
         }
 
@@ -197,7 +212,7 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            aspect-ratio: 16 / 9; /* Сохраняем пропорции 16:9 */
+            aspect-ratio: 16 / 9;
         }
 
         .gallery-item:hover {
@@ -207,8 +222,8 @@
 
         .gallery-item img {
             width: 100%;
-            height: 100%; /* Растягиваем изображение на всю высоту */
-            object-fit: cover; /* Обрезаем изображение, чтобы оно заполнило блок */
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
@@ -257,69 +272,67 @@
             font-size: 30px;
             cursor: pointer;
         }
-		
-		/* Skills Section */
-		.skills {
-			margin-bottom: 60px;
-			text-align: center;
-			margin-left: auto;
-			margin-right: auto;
-		}
 
-		.skill-container {
-			margin: 0 auto 20px; /* Вернули нормальные интервалы между скиллами */
-		}
+        /* Skills Section */
+        .skills {
+            margin-bottom: 60px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-		/* Название скила и процент теперь строго по краям */
-		.skill {
-			display: flex;
-			justify-content: space-between; /* Название слева, процент справа */
-			align-items: center;
-			margin-bottom: 5px;
-		}
+        .skill-container {
+            margin: 0 auto 20px;
+        }
 
-		.skill-name {
-			font-size: 1.2em;
-			font-weight: 600;
-			color: #333;
-			text-align: left; /* Выравниваем по левому краю */
-			width: 100%;
-		}
+        .skill {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
 
-		.skill-percent {
-			font-size: 1.2em;
-			font-weight: 600;
-			color: #ff6f61;
-			text-align: right; /* Выравниваем по правому краю */
-			min-width: 50px;
-		}
+        .skill-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--text-color);
+            text-align: left;
+            width: 100%;
+        }
 
-		/* Полоса загрузки */
-		.skill-bar {
-			height: 10px;
-			background: #ddd;
-			border-radius: 7px;
-			overflow: hidden;
-			width: 100%;
-			position: relative;
-		}
+        .skill-percent {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: right;
+            min-width: 50px;
+        }
 
-		.skill-fill {
-			height: 100%;
-			background: #ff6f61;
-			width: 0;
-			transition: width 1.5s ease-in-out;
-		}
+        .skill-bar {
+            height: 10px;
+            background: #ddd;
+            border-radius: 7px;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: var(--primary-color);
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
 
         /* Testimonials Section */
         .testimonials blockquote {
             background: #fff;
             padding: 20px;
-            border-left: 5px solid #ff6f61;
+            border-left: 5px solid var(--primary-color);
             margin: 10px 0;
             border-radius: 5px;
             font-style: italic;
-            color: #666;
+            color: var(--light-text-color);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -327,7 +340,7 @@
             display: block;
             margin-top: 10px;
             font-weight: 600;
-            color: #333;
+            color: var(--text-color);
         }
 
         /* Contact Section */
@@ -337,108 +350,107 @@
 
         .contact p {
             font-size: 1.1em;
-            color: #666;
+            color: var(--light-text-color);
         }
-		
-		.contact-info-full {
-			margin-top: 20px;
-			font-size: 1.1em;
-			color: #666;
-			display: flex;
-			justify-content: center;
-			gap: 15px;
-			flex-wrap: wrap;
-			margin-left: auto;
-			margin-right: auto;
-			text-align: center;
-		}
 
-		.contact-info-full a {
-			color: #ff6f61;
-			text-decoration: none;
-			font-weight: 600;
-		}
+        .contact-info-full {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: var(--light-text-color);
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
 
-		.contact-info-full a:hover {
-			color: #ff3b2f;
-		}
-		
-		/* Contact Form */
-		.contact-form {
-			max-width: 800px;
-			margin: 30px auto;
-			padding: 20px;
-			background: #fff;
-			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-			border-radius: 10px;
-			text-align: center;
-			box-sizing: border-box; /* добавляем для корректного учета padding и border */
-		}
+        .contact-info-full a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-		.contact-form h3 {
-			margin-bottom: 15px;
-			color: #ff6f61;
-			font-size: 1.5em;
-		}
+        .contact-info-full a:hover {
+            color: var(--secondary-color);
+        }
 
-		.contact-form input,
-		.contact-form textarea {
-			width: 100%;
-			padding: 10px;
-			margin-bottom: 10px;
-			border: 1px solid #ddd;
-			border-radius: 5px;
-			font-size: 1em;
-			transition: border-color 0.3s ease;
-			box-sizing: border-box; /* добавляем для корректного учета padding и border */
-		}
+        /* Contact Form */
+        .contact-form {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            box-sizing: border-box;
+        }
 
-		.contact-form input:focus,
-		.contact-form textarea:focus {
-			border-color: #ff6f61;
-			outline: none;
-		}
+        .contact-form h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 1.5em;
+        }
 
-		.contact-form textarea {
-			height: 120px;
-			resize: none;
-		}
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
 
-		.contact-form button {
-			background: #ff6f61;
-			color: white;
-			border: none;
-			padding: 10px 15px;
-			font-size: 1em;
-			border-radius: 5px;
-			cursor: pointer;
-			transition: background 0.3s ease;
-		}
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
 
-		.contact-form button:hover {
-			background: #ff3b2f;
-		}
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
 
-		#formMessage {
-			margin-top: 10px;
-			font-size: 1em;
-			color: #666;
-		}
+        .contact-form button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
 
+        .contact-form button:hover {
+            background: var(--secondary-color);
+        }
 
-       /* Footer */
-		footer {
-			background: #fff;
-			color: #666;
-			text-align: center;
-			padding: 20px 0;
-			margin-top: 60px;
-			box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-		}
+        #formMessage {
+            margin-top: 10px;
+            font-size: 1em;
+            color: var(--light-text-color);
+        }
 
-		footer p {
-			margin: 0;
-		}
+        /* Footer */
+        footer {
+            background: #fff;
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
@@ -476,32 +488,31 @@
                 width: 90%;
                 height: 50%;
             }
-			
-			.contact-info-full {
-				flex-direction: column;
-				align-items: center;
-				gap: 10px;
-			}
+
+            .contact-info-full {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
         }
-		
     </style>
 </head>
 <body>
     <header>
-        <img src="./img/avatar.jpg" alt="Igor Safronov">
+        <img src="./img/avatar.jpg" alt="Igor Safronov" width="150" height="150">
         <div class="name-container">
             <h1>Igor Safronov</h1>
             <div class="social-tag">@safroigor</div>
         </div>
         <p>Sound Designer / Audio Mixer / Dialog Editor</p>
-		<div class="contact-info">
-			<span>📍 Belgrade, Serbia</span>
-			<span>📧 <a href="mailto:safrosrb@gmail.com">safrogor@gmail.com</a></span>
-			<span>📞 <a href="tel:+381611796385">+3 8161 179 63 85</a></span>
-			<span>🔗 <a href="https://www.linkedin.com/in/safronovigor/" target="_blank">LinkedIn</a></span>
-			<span>💬 <a href="https://t.me/safroigor" target="_blank">Telegram</a></span>
-			<span>🎧 <a href="https://discordapp.com/users/YOUR_DISCORD_ID" target="_blank">Discord</a></span>
-		</div>
+        <div class="contact-info">
+            <span>📍 Belgrade, Serbia</span>
+            <span>📧 <a href="mailto:safroigor@gmail.com">safroigor@gmail.com</a></span>
+            <span>📞 <a href="tel:+381611796385">+3 8161 179 63 85</a></span>
+            <span>🔗 <a href="https://www.linkedin.com/in/safronovigor/" target="_blank">LinkedIn</a></span>
+            <span>💬 <a href="https://t.me/safroigor" target="_blank">Telegram</a></span>
+            <span>🎧 <a href="https://discordapp.com/users/1007334221536301226" target="_blank">Discord</a></span>
+        </div>
     </header>
     <div class="container">
         <!-- Intro Section -->
@@ -543,86 +554,76 @@
             <h2>My Work</h2>
             <div class="gallery">
                 <div class="gallery-item" data-video="https://www.youtube.com/watch?v=fgPNJfxNLOY">
-                    <img src="./img/vid-tumb/steel-hunters.png" alt="Video 1">
-                    <div class="play-icon">▶</div>
+                    <img src="./img/vid-tumb/steel-hunters.png" alt="Steel Hunters video thumbnail" loading="lazy">
+                    <div class="play-icon" aria-label="Play video">▶</div>
                 </div>
                 <div class="gallery-item" data-video="https://www.youtube.com/watch?v=urpvANXrFFE">
-                    <img src="./img/vid-tumb/web-adventure.jpg" alt="Video 2">
-                    <div class="play-icon">▶</div>
+                    <img src="./img/vid-tumb/web-adventure.jpg" alt="Web Adventure video thumbnail" loading="lazy">
+                    <div class="play-icon" aria-label="Play video">▶</div>
                 </div>
                 <div class="gallery-item" data-video="https://www.youtube.com/watch?v=BdsWpFHqs6k">
-                    <img src="./img/vid-tumb/goodfall.png" alt="Video 3">
-                    <div class="play-icon">▶</div>
+                    <img src="./img/vid-tumb/goodfall.png" alt="Goodfall video thumbnail" loading="lazy">
+                    <div class="play-icon" aria-label="Play video">▶</div>
                 </div>
-				<div class="gallery-item" data-video="https://www.youtube.com/watch?v=7AZeTN4eCNM">
-                    <img src="./img/vid-tumb/jeremiah.png" alt="Video 4">
-                    <div class="play-icon">▶</div>
+                <div class="gallery-item" data-video="https://www.youtube.com/watch?v=7AZeTN4eCNM">
+                    <img src="./img/vid-tumb/jeremiah.png" alt="Jeremiah video thumbnail" loading="lazy">
+                    <div class="play-icon" aria-label="Play video">▶</div>
                 </div>
                 <div class="gallery-item" data-video="https://www.youtube.com/watch?v=aFwxIPW7bSw">
-                    <img src="./img/vid-tumb/champz.png" alt="Video 5">
-                    <div class="play-icon">▶</div>
+                    <img src="./img/vid-tumb/champz.png" alt="Champz video thumbnail" loading="lazy">
+                    <div class="play-icon" aria-label="Play video">▶</div>
                 </div>
                 <div class="gallery-item" data-video="https://www.youtube.com/watch?v=DyIS50J9QpI">
-                    <img src="./img/vid-tumb/fear.png" alt="Video 6">
-                    <div class="play-icon">▶</div>
+                    <img src="./img/vid-tumb/fear.png" alt="Fear video thumbnail" loading="lazy">
+                    <div class="play-icon" aria-label="Play video">▶</div>
                 </div>
             </div>
         </section>
-		
-		<!-- Skills Section -->
-		<section class="skills">
-			<h2>Skills</h2>
 
+        <!-- Skills Section -->
+        <section class="skills">
+            <h2>Skills</h2>
+
+            <div class="skill-container">
+                <div class="skill">
+                    <div class="skill-name">Sound Design</div>
+                    <div class="skill-percent">95%</div>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
+            </div>
+
+            <div class="skill-container">
+                <div class="skill">
+                    <div class="skill-name">Audio Editing</div>
+                    <div class="skill-percent">95%</div>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-percent="95"></div></div>
+            </div>
+			
 			<div class="skill-container">
-				<div class="skill">
-					<div class="skill-name">Audio Production</div>
-					<div class="skill-percent">100%</div>
-				</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
-			</div>
+                <div class="skill">
+                    <div class="skill-name">Audio Mixing</div>
+                    <div class="skill-percent">95%</div>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-percent="95"></div></div>
+            </div>
 
-			<div class="skill-container">
-				<div class="skill">
-					<div class="skill-name">Sound Design</div>
-					<div class="skill-percent">100%</div>
-				</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
-			</div>
+            <div class="skill-container">
+                <div class="skill">
+                    <div class="skill-name">Audio Restoration</div>
+                    <div class="skill-percent">90%</div>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-percent="95"></div></div>
+            </div>
 
-			<div class="skill-container">
-				<div class="skill">
-					<div class="skill-name">Audio Editing</div>
-					<div class="skill-percent">95%</div>
-				</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="95"></div></div>
-			</div>
-
-			<div class="skill-container">
-				<div class="skill">
-					<div class="skill-name">Field Recording</div>
-					<div class="skill-percent">95%</div>
-				</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="95"></div></div>
-			</div>
-
-			<div class="skill-container">
-				<div class="skill">
-					<div class="skill-name">Reaper</div>
-					<div class="skill-percent">100%</div>
-				</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="100"></div></div>
-			</div>
-
-			<div class="skill-container">
-				<div class="skill">
-					<div class="skill-name">iZotope</div>
-					<div class="skill-percent">90%</div>
-				</div>
-				<div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
-			</div>
-
-		</section>
-
+            <div class="skill-container">
+                <div class="skill">
+                    <div class="skill-name">Field Recording</div>
+                    <div class="skill-percent">90%</div>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
+            </div>
+        </section>
 
         <!-- Testimonials Section -->
         <section class="testimonials">
@@ -635,35 +636,35 @@
                 <p>"We are absolutely delighted with Igor's work! He not only met but exceeded our expectations in sound design. Igor's attention to detail and willingness to go the extra mile made our project exceptional. The collaboration was seamless, and his creative input added a unique touch. Igor is the go-to sound designer for anyone looking to elevate their project. Super pleased with the outcome!"</p>
                 <cite>— Catherine Day, Animation Show Director</cite>
             </blockquote>
-			<blockquote>
-                <p>"Second time working with him and it was a great experience again! Fast, professional, talented. Couldn't ask for a better sound designer. I've tried working with several people and he is by far the best! Definitely must work with if you are trying to get something sound designed.</p>
+            <blockquote>
+                <p>"Second time working with him and it was a great experience again! Fast, professional, talented. Couldn't ask for a better sound designer. I've tried working with several people and he is by far the best! Definitely must work with if you are trying to get something sound designed."</p>
                 <cite>— Jack Hicks, Video Editor</cite>
             </blockquote>
         </section>
 
         <!-- Contact Section -->
         <section class="contact">
-			<h2>Contact Me</h2>
-			<div class="contact-info-full">
-				<span>📍 Belgrade, Serbia</span>
-				<span>📧 <a href="mailto:safrosrb@gmail.com">safrosrb@gmail.com</a></span>
-				<span>📞 <a href="tel:+381611796385">+3 8161 179 63 85</a></span>
-				<span>🔗 <a href="https://www.linkedin.com/in/safronovigor/" target="_blank">LinkedIn</a></span>
-				<span>💬 <a href="https://t.me/safronovigor" target="_blank">Telegram</a></span>
-				<span>🎧 <a href="https://discordapp.com/users/YOUR_DISCORD_ID" target="_blank">Discord</a></span>
-			</div>
-			<!-- Contact Form -->
-			<div class="contact-form">
-				<h3>Send me a message</h3>
-				<form id="contactForm">
-					<input type="text" id="name" placeholder="Your Name" required>
-					<input type="email" id="email" placeholder="Your Email" required>
-					<textarea id="message" placeholder="Your Message" required></textarea>
-					<button type="submit">Send Message</button>
-				</form>
-				<p id="formMessage"></p>
-			</div>
-		</section>
+            <h2>Contact Me</h2>
+            <div class="contact-info-full">
+                <span>📍 Belgrade, Serbia</span>
+                <span>📧 <a href="mailto:safroigor@gmail.com">safroigor@gmail.com</a></span>
+                <span>📞 <a href="tel:+381611796385">+3 8161 179 63 85</a></span>
+                <span>🔗 <a href="https://www.linkedin.com/in/safronovigor/" target="_blank">LinkedIn</a></span>
+                <span>💬 <a href="https://t.me/safroigor" target="_blank">Telegram</a></span>
+                <span>🎧 <a href="https://discordapp.com/users/1007334221536301226" target="_blank">Discord</a></span>
+            </div>
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Send me a message</h3>
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <p id="formMessage"></p>
+            </div>
+        </section>
     </div>
     <footer>
         <p>&copy; 2023 Igor Safronov. All rights reserved.</p>
@@ -684,7 +685,16 @@
         // Open modal on gallery item click
         document.querySelectorAll('.gallery-item').forEach(item => {
             item.addEventListener('click', () => {
-                const videoUrl = item.getAttribute('data-video');
+                let videoUrl = item.getAttribute('data-video');
+
+                // Преобразование ссылки в правильный формат для встраивания
+                if (videoUrl.includes("watch?v=")) {
+                    videoUrl = videoUrl.replace("watch?v=", "embed/");
+                } else if (videoUrl.includes("youtu.be/")) {
+                    let videoId = videoUrl.split("youtu.be/")[1].split("?")[0];
+                    videoUrl = "https://www.youtube.com/embed/" + videoId;
+                }
+
                 modalVideo.src = videoUrl;
                 modal.style.display = 'flex';
             });
@@ -703,93 +713,73 @@
                 modalVideo.src = ''; // Stop the video
             }
         });
-		
-		document.querySelectorAll('.gallery-item').forEach(item => {
-			item.addEventListener('click', () => {
-				let videoUrl = item.getAttribute('data-video');
 
-				// Преобразование ссылки в правильный формат для встраивания
-				if (videoUrl.includes("watch?v=")) {
-					videoUrl = videoUrl.replace("watch?v=", "embed/");
-				} else if (videoUrl.includes("youtu.be/")) {
-					let videoId = videoUrl.split("youtu.be/")[1].split("?")[0]; 
-					videoUrl = "https://www.youtube.com/embed/" + videoId;
-				}
+        // skills animation
+        document.addEventListener("DOMContentLoaded", function () {
+            const skillBars = document.querySelectorAll(".skill-fill");
+            const skillPercents = document.querySelectorAll(".skill-percent");
+            const skillSection = document.querySelector(".skills");
+            let animationTriggered = false;
 
-				modalVideo.src = videoUrl;
-				modal.style.display = 'flex';
-			});
-		});
-		
-		// skills animation
-		document.addEventListener("DOMContentLoaded", function () {
-			const skillBars = document.querySelectorAll(".skill-fill");
-			const skillPercents = document.querySelectorAll(".skill-percent");
-			const skillSection = document.querySelector(".skills");
-			let animationTriggered = false;
+            function animateSkills() {
+                if (!animationTriggered) {
+                    skillBars.forEach((bar, index) => {
+                        const percent = bar.getAttribute("data-percent");
+                        bar.style.width = percent + "%";
 
-			function animateSkills() {
-				if (!animationTriggered) {
-					skillBars.forEach((bar, index) => {
-						const percent = bar.getAttribute("data-percent");
-						bar.style.width = percent + "%";
+                        // Обновляем текст с процентом
+                        let currentPercent = 0;
+                        const interval = setInterval(() => {
+                            if (currentPercent >= percent) {
+                                clearInterval(interval);
+                            } else {
+                                currentPercent++;
+                                skillPercents[index].textContent = currentPercent + "%";
+                            }
+                        }, 10);
+                    });
+                    animationTriggered = true;
+                }
+            }
 
-						// Обновляем текст с процентом
-						let currentPercent = 0;
-						const interval = setInterval(() => {
-							if (currentPercent >= percent) {
-								clearInterval(interval);
-							} else {
-								currentPercent++;
-								skillPercents[index].textContent = currentPercent + "%";
-							}
-						}, 10);
-					});
-					animationTriggered = true;
-				}
-			}
+            function checkScroll() {
+                const sectionPosition = skillSection.getBoundingClientRect().top;
+                const screenHeight = window.innerHeight;
+                if (sectionPosition < screenHeight * 0.75) {
+                    animateSkills();
+                    window.removeEventListener("scroll", checkScroll);
+                }
+            }
 
-			function checkScroll() {
-				const sectionPosition = skillSection.getBoundingClientRect().top;
-				const screenHeight = window.innerHeight;
-				if (sectionPosition < screenHeight * 0.75) {
-					animateSkills();
-					window.removeEventListener("scroll", checkScroll);
-				}
-			}
+            window.addEventListener("scroll", checkScroll);
+        });
 
-			window.addEventListener("scroll", checkScroll);
-		});
+        // EmailJS Integration
+        (function(){
+            emailjs.init("gIKsIQARsnHKKd4Wk"); // Замените на ваш Public Key
+        })();
 
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var formMessage = document.getElementById("formMessage");
+
+            var params = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value
+            };
+
+            emailjs.send("service_bflygj1", "template_t8cqddv", params)
+            .then(function(response) {
+                formMessage.textContent = "Message sent successfully!";
+                formMessage.style.color = "green";
+                document.getElementById("contactForm").reset();
+            }, function(error) {
+                formMessage.textContent = "Error sending message.";
+                formMessage.style.color = "red";
+            });
+        });
     </script>
-
-	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-		<script>
-			(function(){
-				emailjs.init("gIKsIQARsnHKKd4Wk"); // Замените на ваш Public Key
-			})();
-
-			document.getElementById("contactForm").addEventListener("submit", function(event) {
-				event.preventDefault();
-
-				var formMessage = document.getElementById("formMessage");
-
-				var params = {
-					name: document.getElementById("name").value,
-					email: document.getElementById("email").value,
-					message: document.getElementById("message").value
-				};
-
-				emailjs.send("service_bflygj1", "template_t8cqddv", params)
-				.then(function(response) {
-					formMessage.textContent = "Message sent successfully!";
-					formMessage.style.color = "green";
-					document.getElementById("contactForm").reset();
-				}, function(error) {
-					formMessage.textContent = "Error sending message.";
-					formMessage.style.color = "red";
-				});
-			});
-		</script>
 </body>
 </html>
