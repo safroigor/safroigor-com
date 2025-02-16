@@ -760,26 +760,33 @@
         })();
 
         document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+			event.preventDefault(); // Остановка стандартной отправки формы
 
-            var formMessage = document.getElementById("formMessage");
+			console.log("Форма отправляется..."); // Логируем отправку
 
-            var params = {
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                message: document.getElementById("message").value
-            };
+			var formMessage = document.getElementById("formMessage");
 
-            emailjs.send("service_bflygj1", "template_t8cqddv", params)
-            .then(function(response) {
-                formMessage.textContent = "Message sent successfully!";
-                formMessage.style.color = "green";
-                document.getElementById("contactForm").reset();
-            }, function(error) {
-                formMessage.textContent = "Error sending message.";
-                formMessage.style.color = "red";
-            });
-        });
+			var params = {
+				name: document.getElementById("name").value,
+				email: document.getElementById("email").value,
+				message: document.getElementById("message").value
+			};
+
+			console.log("Отправляем параметры:", params);
+
+			emailjs.send("service_bflygj1", "template_t8cqddv", params)
+			.then(function(response) {
+				console.log("Сообщение отправлено успешно:", response);
+				formMessage.textContent = "Message sent successfully!";
+				formMessage.style.color = "green";
+				document.getElementById("contactForm").reset();
+			})
+			.catch(function(error) {
+				console.error("Ошибка при отправке:", error);
+				formMessage.textContent = "Error sending message.";
+				formMessage.style.color = "red";
+			});
+		});
     </script>
 </body>
 </html>
