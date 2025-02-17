@@ -44,6 +44,85 @@
         a:hover {
             color: var(--secondary-color);
         }
+		
+		/* Dark Theme Styles */
+		body.dark-theme {
+			--primary-color: #ff6f61;
+			--secondary-color: #ff3b2f;
+			--background-color: #1a1a1a;
+			--text-color: #f1f1f1;
+			--light-text-color: #ccc;
+		}
+
+		.dark-theme header {
+			background: linear-gradient(135deg, #333, #1a1a1a);
+			color: var(--text-color);
+		}
+
+		.dark-theme .experience-item {
+			background: #333;
+			color: var(--text-color);
+		}
+
+		.dark-theme .testimonials blockquote {
+			background: #333;
+			color: var(--text-color);
+		}
+
+		.dark-theme .contact-form {
+			background: #333;
+			color: var(--text-color);
+		}
+
+		.dark-theme footer {
+			background: #333;
+			color: var(--text-color);
+		}
+
+		/* Theme Switcher */
+		.theme-switcher {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			display: flex;
+			align-items: center;
+		}
+
+		.theme-switcher label {
+			margin-right: 10px;
+			color: var(--text-color);
+		}
+
+		.theme-switcher input[type="checkbox"] {
+			appearance: none;
+			width: 40px;
+			height: 20px;
+			background-color: #ccc;
+			border-radius: 20px;
+			position: relative;
+			cursor: pointer;
+		}
+
+		.theme-switcher input[type="checkbox"]::before {
+			content: '';
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: #fff;
+			top: 2px;
+			left: 2px;
+			transition: transform 0.3s ease;
+		}
+
+		.theme-switcher input[type="checkbox"]:checked::before {
+			transform: translateX(20px);
+			background-color: #333;
+		}
+
+		.theme-switcher input[type="checkbox"]:checked {
+			background-color: var(--primary-color);
+		}
 
         /* Header */
         header {
@@ -512,6 +591,7 @@
 
         footer p {
             margin: 0;
+			font-size: 0.9em;
         }
 
         /* Responsive Design */
@@ -564,21 +644,25 @@
 </head>
 <body>
     <header>
-        <img src="./img/avatar.jpg" alt="Igor Safronov" width="150" height="150">
-        <div class="name-container">
-            <h1>Igor Safronov</h1>
-            <div class="social-tag">@safroigor</div>
-        </div>
-        <p>Sound Designer / Audio Mixer / Dialog Editor</p>
-        <div class="contact-info">
-            <span>📍 Belgrade, Serbia</span>
-            <span>📧 <a href="mailto:safroigor@gmail.com">safroigor@gmail.com</a></span>
-            <span>📞 <a href="tel:+381611796385">+3 8161 179 63 85</a></span>
-            <span>🔗 <a href="https://www.linkedin.com/in/safronovigor/" target="_blank">LinkedIn</a></span>
-            <span>💬 <a href="https://t.me/safroigor" target="_blank">Telegram</a></span>
-            <span>🎧 <a href="https://discordapp.com/users/1126521125875228712" target="_blank">Discord</a></span>
-        </div>
-    </header>
+		<div class="theme-switcher">
+			<label for="theme-toggle">Dark Mode</label>
+			<input type="checkbox" id="theme-toggle">
+		</div>
+		<img src="./img/avatar.jpg" alt="Igor Safronov" width="150" height="150">
+		<div class="name-container">
+			<h1>Igor Safronov</h1>
+			<div class="social-tag">@safroigor</div>
+		</div>
+		<p>Sound Designer / Audio Mixer / Dialog Editor</p>
+		<div class="contact-info">
+			<span>📍 Belgrade, Serbia</span>
+			<span>📧 <a href="mailto:safroigor@gmail.com">safroigor@gmail.com</a></span>
+			<span>📞 <a href="tel:+381611796385">+3 8161 179 63 85</a></span>
+			<span>🔗 <a href="https://www.linkedin.com/in/safronovigor/" target="_blank">LinkedIn</a></span>
+			<span>💬 <a href="https://t.me/safroigor" target="_blank">Telegram</a></span>
+			<span>🎧 <a href="https://discordapp.com/users/1126521125875228712" target="_blank">Discord</a></span>
+		</div>
+	</header>
     <div class="container">
         <!-- Intro Section -->
         <section class="intro">
@@ -873,6 +957,29 @@
 				// Возвращаем кнопку и скрываем индикатор после завершения
 				submitButton.style.display = "block"; // Показываем кнопку
 				loadingIndicator.classList.remove("visible"); // Скрываем индикатор
+			});
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			const themeToggle = document.getElementById('theme-toggle');
+			const body = document.body;
+
+			// Проверяем, есть ли сохраненная тема в localStorage
+			const savedTheme = localStorage.getItem('theme');
+			if (savedTheme) {
+				body.classList.add(savedTheme);
+				themeToggle.checked = savedTheme === 'dark-theme';
+			}
+
+			// Обработчик для переключения темы
+			themeToggle.addEventListener('change', function() {
+				if (this.checked) {
+					body.classList.add('dark-theme');
+					localStorage.setItem('theme', 'dark-theme');
+				} else {
+					body.classList.remove('dark-theme');
+					localStorage.setItem('theme', '');
+				}
 			});
 		});
     </script>
